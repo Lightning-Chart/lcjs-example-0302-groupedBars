@@ -1,4 +1,4 @@
-/**
+/*
  * LightningChartJS example that showcases creation of a grouped bars chart.
  */
 // Import LightningChartJS
@@ -58,11 +58,11 @@ let barChart
         //#region
         // Show band using Rectangle series.
         const band = chart.addRectangleSeries()
+            .setMouseInteractions(false)
             .setCursorEnabled(false)
             .add({ x: 0, y: 0, width: 0, height: 0 })
             .setFillStyle(new SolidFill().setColor(ColorRGBA(255, 255, 255, 50)))
             .setStrokeStyle(emptyLine)
-            .setMouseInteractions(false)
             .dispose()
         // Modify AutoCursor.
         chart.setAutoCursor(cursor => cursor
