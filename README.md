@@ -37,12 +37,14 @@ chart.addGroups([
 chart
     .addCategory({
         name: 'Category #1',
-        data: [100, 200], // 'data' contain values for each group in same order as they were defined before.
+        // 'data' contain values for each group in same order as they were defined before.
+        data: [100, 200],
         fill: new SolidFill().setColor(prettyColor1)
     })
     .addCategory({
         name: 'Category #2',
-        data: [50, 160], // 'data' contain values for each group in same order as they were defined before.
+        // 'data' contain values for each group in same order as they were defined before.
+        data: [50, 160],
         fill: new SolidFill().setColor(prettyColor2)
     })
 ```

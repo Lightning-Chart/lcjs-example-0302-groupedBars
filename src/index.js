@@ -170,7 +170,7 @@ let barChart
                 .setName(entry.name)
                 .setDefaultStyle(figure => figure.setFillStyle(entry.fill))
             entry.figures = entry.data.map((value) => series.add({ x: 0, y: 0, width: 0, height: 0 }))
-            legendBox.add(series, 'Legend')
+            legendBox.add(series, true, 'Department')
             categories.push(entry)
             redraw()
         }
