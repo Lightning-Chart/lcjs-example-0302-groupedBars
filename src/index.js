@@ -56,14 +56,6 @@ let barChart
 
         // cursor
         //#region
-        // Show band using Rectangle series.
-        const band = chart.addRectangleSeries()
-            .setMouseInteractions(false)
-            .setCursorEnabled(false)
-            .add({ x: 0, y: 0, width: 0, height: 0 })
-            .setFillStyle(new SolidFill().setColor(ColorRGBA(255, 255, 255, 50)))
-            .setStrokeStyle(emptyLine)
-            .dispose()
         // Modify AutoCursor.
         chart.setAutoCursor(cursor => cursor
             .disposePointMarker()
@@ -90,23 +82,6 @@ let barChart
                 return builder
                     .addRow('Department:', entry.name)
                     .addRow('# of employees:', String(entry.value))
-            })
-            // Apply cursor logic using series.onHover method
-            series.onHover((_, point) => {
-                if (point) {
-                    const figure = point.figure
-                    const dimensions = figure.getDimensionsPositionAndSize()
-                    // Show band.
-                    band
-                        .setDimensions({
-                            x: dimensions.x - figureGap * .5,
-                            y: figure.scale.y.getInnerStart(),
-                            width: dimensions.width + figureGap,
-                            height: figure.scale.y.getInnerInterval()
-                        })
-                        .restore()
-                } else
-                    band.dispose()
             })
             return series
         }
