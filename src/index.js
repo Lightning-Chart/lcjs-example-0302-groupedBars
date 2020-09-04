@@ -11,12 +11,13 @@ const {
     ColorRGBA,
     emptyLine,
     emptyFill,
-    emptyTick,
     AutoCursorModes,
     ColorPalettes,
     UIOrigins,
     LegendBoxBuilders,
-    AxisScrollStrategies
+    AxisScrollStrategies,
+    AxisTickStrategies,
+    Themes
 } = lcjs
 
 const lc = lightningChart()
@@ -45,7 +46,7 @@ let barChart
             .setMouseInteractions(false)
             .setScrollStrategy(undefined)
             // Disable default ticks.
-            .setTickStyle(emptyTick)
+            .setTickStrategy(AxisTickStrategies.Empty)
 
         // Y-axis of the series
         const axisY = chart.getDefaultAxisY()
@@ -136,6 +137,7 @@ let barChart
                                 .setFillStyle(emptyFill)
                                 .setStrokeStyle(emptyLine)
                             )
+                            .setTextFillStyle(new SolidFill({ color: ColorRGBA(170, 170, 170) }))
                         )
                 })
         }
@@ -158,7 +160,9 @@ let barChart
 }
 
 // Use bar chart interface to construct series
-const chart = barChart()
+const chart = barChart({
+    // theme: Themes.dark
+})
 
 // Add groups
 chart.addGroups(['Finland', 'Germany', 'UK'])

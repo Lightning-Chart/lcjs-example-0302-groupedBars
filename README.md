@@ -54,19 +54,19 @@ The actual Grouped Bar Chart logic just serves to provide a starting point for u
 
 ## API Links
 
-* XY cartesian chart: [ChartXY]
-* Rectangle series: [RectangleSeries]
-* Solid FillStyle: [SolidFill]
-* Transparent FillStyle: [emptyFill]
-* Empty LineStyle: [emptyLine]
-* RGBA color factory: [ColorRGBA]
-* Color palettes: [ColorPalettes]
-* UI elements builders: [UIElementBuilders]
-* UI position origins: [UIOrigins]
-* Rectangle Series: [RectangleSeries]
-* cursor modes: [AutoCursorModes]
-* Axis: [Axis]
-* Scroll strategies: [AxisScrollStrategies]
+* [XY cartesian chart]
+* [Rectangle series]
+* [Solid FillStyle]
+* [Transparent FillStyle]
+* [Empty LineStyle]
+* [RGBA color factory]
+* [Color palettes]
+* [UI elements builders]
+* [UI position origins]
+* [Rectangle Series]
+* [cursor modes]
+* [Axis]
+* [Scroll strategies]
 
 
 ## Support
@@ -90,17 +90,17 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © Arction Ltd 2009-2020. All rights reserved.
 
 
-[ChartXY]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/classes/chartxy.html
-[RectangleSeries]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/classes/rectangleseries.html
-[SolidFill]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/classes/solidfill.html
-[emptyFill]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/globals.html#emptyfill
-[emptyLine]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/globals.html#emptyline
-[ColorRGBA]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/globals.html#colorrgba
-[ColorPalettes]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/globals.html#colorpalettes
-[UIElementBuilders]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/globals.html#uielementbuilders
-[UIOrigins]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/globals.html#uiorigins
-[RectangleSeries]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/classes/rectangleseries.html
-[AutoCursorModes]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/enums/autocursormodes.html
-[Axis]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/classes/axis.html
-[AxisScrollStrategies]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/globals.html#axisscrollstrategies
+[XY cartesian chart]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/chartxy.html
+[Rectangle series]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/rectangleseries.html
+[Solid FillStyle]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/solidfill.html
+[Transparent FillStyle]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/globals.html#emptyfill
+[Empty LineStyle]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/globals.html#emptyline
+[RGBA color factory]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/globals.html#colorrgba
+[Color palettes]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/globals.html#colorpalettes
+[UI elements builders]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/globals.html#uielementbuilders
+[UI position origins]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/globals.html#uiorigins
+[Rectangle Series]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/rectangleseries.html
+[cursor modes]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/enums/autocursormodes.html
+[Axis]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/axis.html
+[Scroll strategies]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/globals.html#axisscrollstrategies
 
