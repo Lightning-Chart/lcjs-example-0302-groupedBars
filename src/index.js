@@ -17,6 +17,7 @@ const {
     LegendBoxBuilders,
     AxisScrollStrategies,
     AxisTickStrategies,
+    UIElementBuilders,
     Themes
 } = lcjs
 
@@ -73,7 +74,7 @@ let barChart
         const createSeriesForCategory = (category) => {
             const series = chart.addRectangleSeries()
             // Change how marker displays its information.
-            series.setResultTableFormatter((builder, series, figure) => {
+            series.setCursorResultTableFormatter((builder, series, figure) => {
                 // Find cached entry for the figure.
                 let entry = {
                     name: category.name,
@@ -89,11 +90,8 @@ let barChart
         //#endregion
         // LegendBox
         //#region
-        const margin = 4
         const legendBox = chart.addLegendBox(LegendBoxBuilders.VerticalLegendBox)
-            .setPosition({ x: 15, y: 90 })
-            .setOrigin(UIOrigins.LeftTop)
-            .setMargin(margin)
+            .setTitle('Department')
 
         //#endregion
         // Function redraws bars chart based on values of 'groups' and 'categories'
@@ -129,14 +127,10 @@ let barChart
             for (const name of names)
                 groups.push({
                     name,
-                    tick: axisX.addCustomTick()
+                    tick: axisX.addCustomTick(UIElementBuilders.AxisTick)
                         .setGridStrokeLength(0)
                         .setTextFormatter((_) => name)
                         .setMarker((marker) => marker
-                            .setBackground((background) => background
-                                .setFillStyle(emptyFill)
-                                .setStrokeStyle(emptyLine)
-                            )
                             .setTextFillStyle(new SolidFill({ color: ColorRGBA(170, 170, 170) }))
                         )
                 })
@@ -147,7 +141,7 @@ let barChart
                 .setName(entry.name)
                 .setDefaultStyle(figure => figure.setFillStyle(entry.fill))
             entry.figures = entry.data.map((value) => series.add({ x: 0, y: 0, width: 0, height: 0 }))
-            legendBox.add(series, true, 'Department')
+            legendBox.add(series)
             categories.push(entry)
             redraw()
         }
