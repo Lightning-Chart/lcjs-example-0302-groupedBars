@@ -1,6 +1,6 @@
-# Grouped Bars
+# JavaScript Grouped Bars Chart
 
-![Grouped Bars](groupedBars.png)
+![JavaScript Grouped Bars Chart](groupedBars.png)
 
 This demo application belongs to the set of examples for LightningChart JS, data visualization library for JavaScript.
 
