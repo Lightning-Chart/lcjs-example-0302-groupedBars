@@ -7,12 +7,8 @@ const lcjs = require('@arction/lcjs')
 // Extract required parts from LightningChartJS.
 const {
     lightningChart,
-    SolidFill,
-    ColorRGBA,
     emptyLine,
-    emptyFill,
     AutoCursorModes,
-    ColorPalettes,
     UIOrigins,
     LegendBoxBuilders,
     AxisScrollStrategies,
@@ -91,6 +87,11 @@ let barChart
         // LegendBox
         //#region
         const legendBox = chart.addLegendBox(LegendBoxBuilders.VerticalLegendBox)
+            // Dispose example UI elements automatically if they take too much space. This is to avoid bad UI on mobile / etc. devices.
+            .setAutoDispose({
+                type: 'max-width',
+                maxWidth: 0.20,
+            })
             .setTitle('Department')
 
         //#endregion
@@ -130,16 +131,12 @@ let barChart
                     tick: axisX.addCustomTick(UIElementBuilders.AxisTick)
                         .setGridStrokeLength(0)
                         .setTextFormatter((_) => name)
-                        .setMarker((marker) => marker
-                            .setTextFillStyle(new SolidFill({ color: ColorRGBA(170, 170, 170) }))
-                        )
                 })
         }
         const addCategory = (entry) => {
             // Each category has its own series.
             const series = createSeriesForCategory(entry)
                 .setName(entry.name)
-                .setDefaultStyle(figure => figure.setFillStyle(entry.fill))
             entry.figures = entry.data.map((value) => series.add({ x: 0, y: 0, width: 0, height: 0 }))
             legendBox.add(series)
             categories.push(entry)
@@ -155,7 +152,7 @@ let barChart
 
 // Use bar chart interface to construct series
 const chart = barChart({
-    // theme: Themes.dark
+    // theme: Themes.darkGold
 })
 
 // Add groups
@@ -163,8 +160,6 @@ chart.addGroups(['Finland', 'Germany', 'UK'])
 
 // Add categories of bars
 const categories = ['Engineers', 'Sales', 'Marketing']
-const palette = ColorPalettes.arctionWarm(categories.length)
-const fillStyles = categories.map((_, i) => new SolidFill({ color: palette(i) }))
 const data = [
     [48, 27, 24],
     [19, 40, 14],
@@ -173,7 +168,6 @@ const data = [
 data.forEach((data, i) =>
     chart.addCategory({
         name: categories[i],
-        data,
-        fill: fillStyles[i]
+        data
     })
 )
