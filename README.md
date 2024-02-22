@@ -21,49 +21,32 @@ The demo can be used as an example or a seed project. Local execution requires t
 
 _Also known as Multi-set / Clustered Bar Chart_
 
-This example shows creation of a Grouped Bar Chart made on user side by utilizing RectangleSeries. This is a variation of normal Bar Chart where groups of bars are spaced apart from each other for further categorizing.
+This example shows creation of a Grouped Bar Chart made on user side with BarChart.
+This is a variation of normal Bar Chart where groups of bars are spaced apart from each other for further categorizing.
 
 Here's the creation of a Grouped Bar Chart using a pre-defined interface.
 
 ```javascript
 // Create Chart.
-const chart = barChart()
-// Add groups.
-chart.addGroups(['Group A', 'Group B'])
-// Add categories & values.
-chart
-    .addCategory({
-        name: 'Category #1',
-        // 'data' contain values for each group in same order as they were defined before.
-        data: [100, 200],
-        fill: new SolidFill().setColor(prettyColor1),
-    })
-    .addCategory({
-        name: 'Category #2',
-        // 'data' contain values for each group in same order as they were defined before.
-        data: [50, 160],
-        fill: new SolidFill().setColor(prettyColor2),
-    })
-```
+const barChart = lightningChart().BarChart()
 
-The actual Grouped Bar Chart logic just serves to provide a starting point for users to create their own API based on their needs and preferences.
+// Add categories('Finland', 'Germany', 'UK) and subCategory & values.
+barChart.setDataGrouped(
+    ['Finland', 'Germany', 'UK'],
+    [
+        { subCategory: 'Engineers', values: [48, 27, 24] },
+        { subCategory: 'Sales', values: [19, 40, 14] },
+        { subCategory: 'Marketing', values: [33, 33, 62] },
+    ],
+)
+```
 
 
 ## API Links
 
-* [XY cartesian chart]
-* [Rectangle series]
-* [Solid FillStyle]
-* [Transparent FillStyle]
-* [Empty LineStyle]
-* [RGBA color factory]
-* [Color palettes]
-* [UI elements builders]
-* [UI position origins]
-* [Rectangle Series]
-* [Auto cursor modes]
-* [Axis]
-* [Scroll strategies]
+* [Bar chart]
+* [Bar chart Value Axis]
+* [Bar chart Category Axis]
 
 
 ## Support
@@ -74,7 +57,7 @@ Official [API documentation][1] can be found on [LightningChart][2] website.
 
 If the docs and other materials do not solve your problem as well as implementation help is needed, ask on [StackOverflow][3] (tagged lightningchart).
 
-If you think you found a bug in the LightningChart JavaScript library, please contact support@lightningchart.com.
+If you think you found a bug in the LightningChart JavaScript library, please contact sales@lightningchart.com.
 
 Direct developer email support can be purchased through a [Support Plan][4] or by contacting sales@lightningchart.com.
 
@@ -87,17 +70,7 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © LightningChart Ltd 2009-2022. All rights reserved.
 
 
-[XY cartesian chart]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/classes/ChartXY.html
-[Rectangle series]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/classes/RectangleSeries.html
-[Solid FillStyle]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/classes/SolidFill.html
-[Transparent FillStyle]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/variables/emptyFill-1.html
-[Empty LineStyle]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/variables/emptyLine.html
-[RGBA color factory]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/functions/ColorRGBA.html
-[Color palettes]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/variables/ColorPalettes.html
-[UI elements builders]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/variables/UIElementBuilders.html
-[UI position origins]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/variables/UIOrigins.html
-[Rectangle Series]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/classes/RectangleSeries.html
-[Auto cursor modes]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/enums/AutoCursorModes.html
-[Axis]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/classes/Axis.html
-[Scroll strategies]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/variables/AxisScrollStrategies.html
+[Bar chart]: https://lightningchart.com/js-charts/api-documentation/v5.1.0/interfaces/BarChart.html
+[Bar chart Value Axis]: https://lightningchart.com/js-charts/api-documentation/v5.1.0/classes/BarChartValueAxis.html
+[Bar chart Category Axis]: https://lightningchart.com/js-charts/api-documentation/v5.1.0/classes/BarChartCategoryAxis.html
 
