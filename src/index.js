@@ -9,7 +9,7 @@ const { lightningChart, AxisTickStrategies, LegendBoxBuilders, AxisScrollStrateg
 
 const barChart = lightningChart()
     .BarChart({
-        // theme: Themes.darkGold
+        theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
     })
     .setTitle('Grouped Bars (Employee Count)')
     .setValueLabels(undefined)
