@@ -7,7 +7,9 @@ const lcjs = require('@arction/lcjs')
 // Extract required parts from LightningChartJS.
 const { lightningChart, AxisTickStrategies, LegendBoxBuilders, AxisScrollStrategies, BarChartSorting, Themes } = lcjs
 
-const barChart = lightningChart()
+const barChart = lightningChart({
+            resourcesBaseUrl: new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname + 'resources/',
+        })
     .BarChart({
         theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
     })
