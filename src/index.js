@@ -2,7 +2,7 @@
  * LightningChartJS example that showcases creation of a grouped bars chart.
  */
 // Import LightningChartJS
-const lcjs = require('@arction/lcjs')
+const lcjs = require('@lightningchart/lcjs')
 
 // Extract required parts from LightningChartJS.
 const { lightningChart, AxisTickStrategies, LegendBoxBuilders, AxisScrollStrategies, BarChartSorting, Themes } = lcjs
@@ -15,10 +15,6 @@ const barChart = lightningChart({
     })
     .setTitle('Grouped Bars (Employee Count)')
     .setValueLabels(undefined)
-    .setCursorResultTableFormatter((builder, category, value, bar) => {
-        builder.addRow('Department:', bar.subCategory).addRow('# of employees:', String(value))
-        return builder
-    })
 
 barChart
     .setDataGrouped(
