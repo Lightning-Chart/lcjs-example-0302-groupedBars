@@ -25,7 +25,7 @@ barChart
             { subCategory: 'Marketing', values: [33, 33, 62] },
         ],
     )
-    .setSorting(BarChartSorting.None).set
+    .setSorting(BarChartSorting.None)
 
 barChart.valueAxis.setTitle('Number of Employees')
 
