@@ -5,7 +5,7 @@
 const lcjs = require('@lightningchart/lcjs')
 
 // Extract required parts from LightningChartJS.
-const { lightningChart, AxisTickStrategies, LegendBoxBuilders, AxisScrollStrategies, BarChartSorting, Themes } = lcjs
+const { lightningChart, AxisTickStrategies, AxisScrollStrategies, BarChartSorting, Themes } = lcjs
 
 const barChart = lightningChart({
             resourcesBaseUrl: new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname + 'resources/',
@@ -28,15 +28,3 @@ barChart
     .setSorting(BarChartSorting.None)
 
 barChart.valueAxis.setTitle('Number of Employees')
-
-// Add LegendBox.
-const legend = barChart
-    .addLegendBox(LegendBoxBuilders.VerticalLegendBox)
-    // Dispose example UI elements automatically if they take too much space. This is to avoid bad UI on mobile / etc. devices.
-    .setAutoDispose({
-        type: 'max-width',
-        maxWidth: 0.2,
-    })
-    .setTitle('Department')
-
-legend.add(barChart)
