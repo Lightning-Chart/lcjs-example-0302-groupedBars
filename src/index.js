@@ -19,7 +19,10 @@ const barChart = lightningChart({
 textRenderer: window.lcjsSmallView ? lcjs.htmlTextRenderer : undefined,
     })
     .setTitle('Grouped Bars (Employee Count)')
-    .setValueLabels(undefined)
+    .setValueLabels({
+        position: 'inside-bar',
+        formatter: (info) => info.value.toFixed(0),
+    })
 
 barChart
     .setDataGrouped(
